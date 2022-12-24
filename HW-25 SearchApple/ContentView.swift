@@ -9,8 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            SearchMainScreen()
+                .tabItem {
+                    Image(systemName: Strings.Tabbar.tabBarItemLeft)
+                    Text(Strings.Tabbar.tabBarLeftName)
+                }
+            SearchMainScreen()
+            .tabItem {
+                Image(systemName: Strings.Tabbar.tabBarItemMiddle)
+                Text(Strings.Tabbar.tabBarMiddleName)
+            }
+            SearchMainScreen()
+                .tabItem {
+                    Image(systemName: Strings.Tabbar.tabBarItemRigth)
+                    Text(Strings.Tabbar.tabBarRigthName)
+                }
+        }
+        .accentColor(.red)
     }
 }
 
