@@ -40,6 +40,7 @@ struct SearchScreen: View {
             .navigationTitle(Strings.NavigationTitles.searchScreenTitles)
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
+//        .padding(.bottom, 80)
     }
 }
 

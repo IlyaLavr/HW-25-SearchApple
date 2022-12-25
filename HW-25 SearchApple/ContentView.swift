@@ -8,19 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var expand = false
+    @Namespace var animation
+    
     var body: some View {
         TabView {
-            SearchMainScreen()
+            ZStack(alignment: .bottom) {
+                SearchMainScreen()
+                MusicPlayerView(animation: animation, expand: $expand)
+            }
                 .tabItem {
                     Image(systemName: Strings.Tabbar.tabBarItemLeft)
                     Text(Strings.Tabbar.tabBarLeftName)
                 }
-            SearchMainScreen()
+            ZStack(alignment: .bottom) {
+                SearchMainScreen()
+                MusicPlayerView(animation: animation, expand: $expand)
+            }
             .tabItem {
                 Image(systemName: Strings.Tabbar.tabBarItemMiddle)
                 Text(Strings.Tabbar.tabBarMiddleName)
             }
-            SearchMainScreen()
+            ZStack(alignment: .bottom) {
+                SearchMainScreen()
+                MusicPlayerView(animation: animation, expand: $expand)
+            }
                 .tabItem {
                     Image(systemName: Strings.Tabbar.tabBarItemRigth)
                     Text(Strings.Tabbar.tabBarRigthName)
